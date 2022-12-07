@@ -7,8 +7,8 @@ trigger:
 - main
 
 pool:
-  vmImage: LocalAgent
-  #ubuntu-latest
+  name: LocalAgent
+  #vmImage: ubuntu-latest
 
 steps:
 - script: |
