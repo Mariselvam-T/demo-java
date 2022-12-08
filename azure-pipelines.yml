@@ -32,4 +32,5 @@ steps:
   displayName: 'Populate the CodeQL runner databases, analyze them, and upload the results to GitHub.'
   #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
   #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
+  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
   
