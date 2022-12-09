@@ -28,3 +28,11 @@ steps:
     ./codeql/codeql resolve qlpacks
   displayName: 'Download Codeql CLI package'
 
+- script: |
+    echo current working directory
+    pwd
+    ./codeql/codeql database create /codeql-dbs/demo-java-repo --language=java --sourceroot=.
+    ./codeql/codeql database analyze /codeql-dbs/demo-java-repo java-code-scanning.qls --sarif-category=java \
+    --format=sarif-latest --output=/temp/demo-java-repo.sarif
+  displayName: 'configure and analyze codeql database'
+
