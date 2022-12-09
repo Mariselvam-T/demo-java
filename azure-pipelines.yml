@@ -18,4 +18,13 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-linux64.tar.gz
+- script: |
+    wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-linux64.tar.gz
+    tar -xvzf ./codeql-bundle-linux64.tar.gz
+    echo current working directory
+    pwd
+    echo list directory
+    ls
+    codeql resolve qlpacks
+  displayName: 'Download Codeql CLI package'
+
