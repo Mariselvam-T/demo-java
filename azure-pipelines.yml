@@ -26,8 +26,9 @@ steps:
     echo list directory
     ls
     ./codeql/codeql resolve qlpacks
-    cd codeql
-    codeql database create --help
+    echo Agent build directory $(Agent.BuildDirectory)
+    echo Agent HomeDirectory directory $(Agent.HomeDirectory)
+    #codeql database create --help
     ./codeql/codeql database create ./codeql/codeql-dbs/demo-java-repo --language=java --source-root=.
     #cd codeql
   displayName: 'Download Codeql CLI package'
