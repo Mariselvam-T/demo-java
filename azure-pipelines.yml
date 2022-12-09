@@ -25,6 +25,6 @@ steps:
     pwd
     echo list directory
     ls
-    codeql resolve qlpacks
+    ./codeql/codeql resolve qlpacks
   displayName: 'Download Codeql CLI package'
 
