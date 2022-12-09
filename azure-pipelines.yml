@@ -29,7 +29,8 @@ steps:
     echo Agent build directory $(Agent.BuildDirectory)
     echo Agent HomeDirectory directory $(Agent.HomeDirectory)
     #codeql database create --help
-    ./codeql/codeql database create ./codeql/codeql-dbs/demo-java-repo --language=java --source-root=.
+    mkdir $(Agent.BuildDirectory)/s/codeql/codeql-dbs
+    $(Agent.BuildDirectory)/s/codeql/codeql database create $(Agent.BuildDirectory)/s/codeql/codeql-dbs/demo-java-repo --language=java --source-root=.
     #cd codeql
   displayName: 'Download Codeql CLI package'
 
